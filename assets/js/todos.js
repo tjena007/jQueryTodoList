@@ -30,7 +30,15 @@ $("ul").on("click", "span", function () {
 $("input[type = 'text']").keypress(function (e) {
   if (e.which === 13) {
     todoText = $(this).val();
-    $(this).val("");
-    $("ul").append("<li><span>X</span> " + todoText + "</li>");
+    if (!todoText.replace(/\s/g, "").length) {
+      alert("Add a todo!");
+    } else {
+      $(this).val("");
+      $("ul").append(
+        "<li><span><i class='far fa-trash-alt'></i></span> " +
+          todoText +
+          "</li>"
+      );
+    }
   }
 });
