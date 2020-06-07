@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(to right, lightblue, olive);
+}
+
+.container {
+  border: 2px solid gray;
+  margin: 0 auto;
+  width: 360px;
+  list-style-type: none;
+  /* text-align: center; */
+}
+
+.complete {
+  text-decoration: line-through;
+  color: gray;
+}
