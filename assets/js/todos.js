@@ -1,5 +1,5 @@
 //Mark as complete todos
-$("li").click(function () {
+$("ul").on("click", "li", function () {
   //   //if li is gray
   //   if ($(this).css("color") === "rgb(128, 128, 128)") {
   //     $(this).css({
@@ -18,10 +18,19 @@ $("li").click(function () {
 });
 
 //Delete Todos
-$("span").click(function () {
+$("ul").on("click", "span", function () {
   $(this)
     .parent()
     .fadeOut(500, function () {
+      //selects the parent element
       $(this).remove();
     });
+});
+
+$("input[type = 'text']").keypress(function (e) {
+  if (e.which === 13) {
+    todoText = $(this).val();
+    $(this).val("");
+    $("ul").append("<li><span>X</span> " + todoText + "</li>");
+  }
 });
